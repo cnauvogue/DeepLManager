@@ -1,0 +1,11 @@
+<h1>Translations</h1>
+<% @translations.each do |translation| %>
+  <div>
+    <%= translation.original %>
+  </div>
+<% end %>
+
+<h1>
+  <%= link_to 'Create new translation', new_translation_path %>
+</h1>
+
