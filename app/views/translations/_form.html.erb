@@ -1,7 +1,17 @@
 <%= form_with model:translation do |form| %>
   <div>
-    <%= form.label :original %><br>
-    <%= form.text_field :original %>
+    <%= form.label :translated_term %><br>
+    <%= form.text_field :translated_term %>
+  </div>
+
+  <div>
+    <%= form.label :language_id %><br>
+    <%= form.select :language_id, Language.all.collect {|l| [l.name, l.id]}, {include_blank: true} %>
+  </div>
+
+  <div>
+    <%= form.label :term_id %><br>
+    <%= form.select :term_id, Term.all.collect {|t| [t.original, t.id]}, {include_blank: true} %>
   </div>
 
   <div>

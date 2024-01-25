@@ -1,7 +1,7 @@
 <h1>Translations</h1>
 <% @translations.each do |translation| %>
   <div>
-    <%= link_to translation.original, translation %>
+    <%= link_to translation.term.original, translation %>
   </div>
 <% end %>
 

@@ -12,7 +12,15 @@ class TranslationsController < ApplicationController
   end
 
   def create
-    @translation = Translation.new(translation_params)
+    @term = Term.find(translation_params[:term_id])
+    @language = Language.find(translation_params[:language_id])
+
+    @translation = Translation.new(
+      translated_term: translation_params[:translated_term],
+      language: @language,
+      term: @term
+    )
+
     if @translation.save
       redirect_to @translation
     else
@@ -42,6 +50,6 @@ class TranslationsController < ApplicationController
   private
 
   def translation_params
-    params.require(:translation).permit(:original)
+    params.require(:translation).permit(:translated_term, :term_id, :language_id)
   end
 end
