@@ -4,6 +4,7 @@
 
 <div>
   <%= link_to "Edit this term", edit_term_path(@term) %> |
+  <%= link_to "Add a translation for this term", new_translation_path(:term_id => @term.id) %> |
   <%= link_to "Back to terms", terms_path %>
 
   <%= button_to "Destroy this term", @term, method: :delete %>
