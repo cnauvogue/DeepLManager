@@ -3,5 +3,12 @@
     <strong>Original:</strong>
     <%= term.original %>
   </p>
+  <p>
+    <strong>Translations:</strong>
+    <ul>
+      <% term.translations.each do |t| %>
+        <li><%="#{t.language.name}: #{t.translated_term}"%></li>
+      <% end %>
+    </ul>
 
 </div>
