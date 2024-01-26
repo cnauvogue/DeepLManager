@@ -24,12 +24,6 @@ p {
     background-color: green;
 }
 
-ul {
-  list-style: none;
-}
-li {
-  list-style: none;
-}
 .translations_list {
     display:flex;
 }
@@ -41,6 +35,14 @@ li {
     padding:10px;
     flex:0 1 10%;
     border-radius: 20px;
+}
+
+.translation_detail_language {
+  font-style: italic;
+}
+
+.translation_detail_term {
+  font-weight: bold;
 }
 
 .person_name {

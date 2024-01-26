@@ -6,11 +6,9 @@
   <p>
     <strong>Translations:</strong>
     <div class="translations_list">
-      <ul>
-        <% term.translations.each do |t| %>
-          <%= render "translations/translation", translation: t %>
-        <% end %>
-      </ul>
+      <% term.translations.each do |t| %>
+        <%= render "translations/translation", translation: t %>
+      <% end %>
     </div>
 
 <!--</div>-->
