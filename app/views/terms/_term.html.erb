@@ -7,7 +7,9 @@
     <strong>Translations:</strong>
     <div class="translations_list">
       <% term.translations.each do |t| %>
-        <%= render "translations/translation", translation: t %>
+        <%= link_to t, class: "link" do %>
+          <%= render "translations/translation", translation: t %>
+        <% end %>
       <% end %>
     </div>
 

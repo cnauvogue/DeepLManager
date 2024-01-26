@@ -17,6 +17,10 @@
 * {
     box-sizing:border-box;
 }
+
+:root {
+  --main-text-color: black;
+}
 h1 {
     color: maroon;
 }
@@ -24,6 +28,10 @@ p {
     background-color: green;
 }
 
+.link {
+  color: var(--main-text-color); 
+  text-decoration: none; 
+}
 .translations_list {
     display:flex;
 }
