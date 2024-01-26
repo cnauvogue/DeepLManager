@@ -1,14 +1,16 @@
-<div id="<%= dom_id term %>">
+<!--<div id="<%= dom_id term %>">-->
   <p>
     <strong>Original:</strong>
     <%= term.original %>
   </p>
   <p>
     <strong>Translations:</strong>
-    <ul>
-      <% term.translations.each do |t| %>
-        <li><%="#{t.language.name}: #{t.translated_term}"%></li>
-      <% end %>
-    </ul>
+    <div class="translations_list">
+      <ul>
+        <% term.translations.each do |t| %>
+          <%= render "translations/translation", translation: t %>
+        <% end %>
+      </ul>
+    </div>
 
-</div>
+<!--</div>-->

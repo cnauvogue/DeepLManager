@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+    box-sizing:border-box;
+}
+h1 {
+    color: maroon;
+}
+p {
+    background-color: green;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  list-style: none;
+}
+.translations_list {
+    display:flex;
+}
+
+.translation_detail {
+    display:inline-block;
+    margin: 5px;
+    background-color:teal;
+    padding:10px;
+    flex:0 1 10%;
+    border-radius: 20px;
+}
+
+.person_name {
+    background-color: red;
+    display:block;
+    margin:5px;
+}
+
+.person_relation {
+    display:block;
+    margin:5px;
+}

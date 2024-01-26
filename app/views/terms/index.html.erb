@@ -2,12 +2,16 @@
 
 <h1>Terms</h1>
 
-<div id="terms">
+<div class="terms_list">
   <% @terms.each do |term| %>
-    <%= render term %>
-    <p>
-      <%= link_to "Show this term", term %>
-    </p>
+    <!-- <li> -->
+    <div class="term_detail">
+      <%= render term %>
+      <p>
+        <%= link_to "Show this term", term %>
+      </p>
+    </div>
+    <!-- </li> -->
   <% end %>
 </div>
 
