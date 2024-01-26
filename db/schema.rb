@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_25_135430) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_26_124235) do
   create_table "languages", force: :cascade do |t|
     t.string "code"
     t.string "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_25_135430) do
     t.integer "term_id", null: false
     t.integer "language_id", null: false
     t.index ["language_id"], name: "index_translations_on_language_id"
+    t.index ["term_id", "language_id"], name: "index_translations_on_term_id_and_language_id", unique: true
     t.index ["term_id"], name: "index_translations_on_term_id"
   end
 
