@@ -32,6 +32,13 @@ p {
   color: var(--main-text-color); 
   text-decoration: none; 
 }
+.term_original {
+  font-weight: bold;
+  color: blue;
+  background-color: red;
+  border-radius: 20px;
+  padding:10px;
+}
 .translations_list {
     display:flex;
 }

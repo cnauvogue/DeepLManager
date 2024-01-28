@@ -1,16 +1,12 @@
-<!--<div id="<%= dom_id term %>">-->
-  <p>
-    <strong>Original:</strong>
-    <%= term.original %>
-  </p>
-  <p>
-    <strong>Translations:</strong>
-    <div class="translations_list">
-      <% term.translations.each do |t| %>
-        <%= link_to t, class: "link" do %>
-          <%= render "translations/translation", translation: t %>
-        <% end %>
-      <% end %>
-    </div>
+<div class = "term_original">
+  <%= term.original %>
+</div>
+<div class="translations_list">
+  <% term.translations.each do |t| %>
+    <%= link_to edit_translation_path(t, :term => term), class: "link" do %>
+      <%= render "translations/translation", translation: t %>
+    <% end %>
+  <% end %>
+</div>
 
 <!--</div>-->

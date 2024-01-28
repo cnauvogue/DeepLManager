@@ -1,2 +1,3 @@
 <h1>Edit <%= @translation.term %></h1>
-<%= render "form", translation: @translation%>
+<%= "The value of params[term] is #{params[:term]}" %> -->
+<%= render "form", translation: @translation, term: params[:term] %>

@@ -5,12 +5,11 @@
 <div class="terms_list">
   <% @terms.each do |term| %>
     <!-- <li> -->
-    <div class="term_detail">
-      <%= render term %>
-      <p>
-        <%= link_to "Show this term", term %>
-      </p>
-    </div>
+    <%= link_to term, class: "link" do %>
+      <div class="term_detail">
+        <%= render term %>
+      </div>
+    <% end %>
     <!-- </li> -->
   <% end %>
 </div>

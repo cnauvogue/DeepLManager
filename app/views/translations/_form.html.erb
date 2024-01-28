@@ -11,7 +11,7 @@
 
   <div>
     <%= form.label :term_id %><br>
-    <%= form.select :term_id, Term.all.collect {|t| [t.original, t.id]}, {include_blank: true, selected: term&.id } %>
+    <%= form.select :term_id, Term.all.collect {|t| [t.original, t.id]}, {include_blank: true, selected: term ? term : nil } %>
   </div>
 
   <div>
