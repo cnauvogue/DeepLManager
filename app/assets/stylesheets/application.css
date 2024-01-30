@@ -34,6 +34,29 @@ p {
   color: var(--main-text-color); 
   text-decoration: none; 
 }
+
+body {
+  margin:0px;
+  padding:0px;
+}
+#header {
+  margin:0px;
+}
+
+.navbar {
+  background-color: var(--noyb-purple);
+  color: white;
+  font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  font-size: 2em;
+  padding: 20px;
+  margin: 0px;
+}
+
+.navbar-item {
+  display: inline;
+  color: white;
+}
+
 .term_original {
   font-weight: bold;
   color: white;
