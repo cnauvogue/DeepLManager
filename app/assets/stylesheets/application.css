@@ -20,6 +20,8 @@
 
 :root {
   --main-text-color: black;
+  --border-radius: 20px;
+  --noyb-purple: #9c0a7d;
 }
 h1 {
   color: maroon;
@@ -34,19 +36,19 @@ p {
 }
 .term_original {
   font-weight: bold;
-  color: black;
-  background-color: #a0aade;
-  border-radius: 20px;
+  color: white;
+  background-color: var(--noyb-purple);
+  border-radius: calc(var(--border-radius) - 2px) calc(var(--border-radius) - 2px) 0px 0px;
   padding:10px;
   text-indent: 10px;
 }
 
 .term_original:hover {
-  background-color: #909ad6;
+  background-color: #d02ea0;
 }
 .term_detail {
-  background-color: #b0bbee;
-  border-radius: 20px;
+  border: 2px solid var(--noyb-purple);
+  border-radius: var(--border-radius);
   margin: 5px;
 }
 .translations_list {
@@ -59,7 +61,7 @@ p {
     background-color: #b0dd88;
     padding:10px;
     flex:0 1 10%;
-    border-radius: 20px;
+    border-radius: var(--border-radius);
 }
 .translation_detail:hover {
   background-color: #a0cd80;
@@ -80,7 +82,7 @@ p {
   padding:10px;
   flex:0 1 10%;
   height: calc(100% - 10px);
-  border-radius: 20px;
+  border-radius: var(--border-radius);
   font-style: italic;
 }
 
