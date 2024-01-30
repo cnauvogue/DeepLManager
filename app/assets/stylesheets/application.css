@@ -34,10 +34,20 @@ p {
 }
 .term_original {
   font-weight: bold;
-  color: blue;
-  background-color: red;
+  color: black;
+  background-color: #a0aade;
   border-radius: 20px;
   padding:10px;
+  text-indent: 10px;
+}
+
+.term_original:hover {
+  background-color: #909ad6;
+}
+.term_detail {
+  background-color: #b0bbee;
+  border-radius: 20px;
+  margin: 5px;
 }
 .translations_list {
     display:flex;
@@ -46,10 +56,13 @@ p {
 .translation_detail {
     display:inline-block;
     margin: 5px;
-    background-color:teal;
+    background-color: #b0dd88;
     padding:10px;
     flex:0 1 10%;
     border-radius: 20px;
+}
+.translation_detail:hover {
+  background-color: #a0cd80;
 }
 
 .translation_detail_language {
