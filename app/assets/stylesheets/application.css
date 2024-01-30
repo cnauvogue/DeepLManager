@@ -15,17 +15,17 @@
  */
 
 * {
-    box-sizing:border-box;
+  box-sizing:border-box;
 }
 
 :root {
   --main-text-color: black;
 }
 h1 {
-    color: maroon;
+  color: maroon;
 }
 p {
-    background-color: green;
+  background-color: green;
 }
 
 .link {
@@ -85,12 +85,12 @@ p {
 }
 
 .person_name {
-    background-color: red;
-    display:block;
-    margin:5px;
+  background-color: red;
+  display:block;
+  margin:5px;
 }
 
 .person_relation {
-    display:block;
-    margin:5px;
+  display:block;
+  margin:5px;
 }
