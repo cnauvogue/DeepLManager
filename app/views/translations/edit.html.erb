@@ -1,2 +1,2 @@
 <h1>Edit <%= @translation.term.original%></h1>
-<%= render "form", translation: @translation, term: @translation.term %>
+<%= render "form", translation: @translation, term: @translation.term.id, language: @translation.language.id %>

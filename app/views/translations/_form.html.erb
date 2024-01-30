@@ -6,12 +6,12 @@
 
   <div>
     <%= form.label :language_id %><br>
-    <%= form.select :language_id, Language.all.collect {|l| [l.name, l.id]}, {include_blank: true} %>
+    <%= form.select :language_id, Language.all.collect {|l| [l.name, l.id]}, {include_blank: true, selected: language } %>
   </div>
 
   <div>
     <%= form.label :term_id %><br>
-    <%= form.select :term_id, Term.all.collect {|t| [t.original, t.id]}, {include_blank: true, selected: @term&.id ? @term.id : nil } %>
+    <%= form.select :term_id, Term.all.collect {|t| [t.original, t.id]}, {include_blank: true, selected: term } %>
   </div>
 
   <div>

@@ -12,6 +12,9 @@ class TranslationsController < ApplicationController
     if params[:term] != nil
       @term = Term.find(params[:term])
     end
+    if params[:language] != nil
+      @language = Language.find(params[:language])
+    end
   end
 
   def create
