@@ -2,18 +2,17 @@
   <%= term.original %>
 </div>
 <div class="translations_list">
-  <% term.translations.each do |t| %>
-    <%= link_to edit_translation_path(t), class: "link" do %>
-      <%= render "translations/translation", translation: t %>
-    <% end %>
-  <% end %>
-  <% untranslated_languages.each do |l| %>
-    <%= link_to new_translation_path, language: l, class: "link" do %>
-      <div class="untranslated_language">
-        <div class="untranslated_language_name">
-          <%= l.name %>
+  <% maybe_translations.each do |mt| %>
+    <%= link_to mt.link, language: mt.language, class: "link" do %>
+      <% if mt.translated? %>
+        <%= render "translations/translation", translation: mt.translation %>
+      <% else %>
+        <div class="untranslated_language">
+          <div class="untranslated_language_name">
+            <%= mt.language.name %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

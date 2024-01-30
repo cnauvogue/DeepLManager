@@ -4,9 +4,9 @@ class TermsController < ApplicationController
   # GET /terms or /terms.json
   def index
     @terms = Term.all
-    @untranslated = {}
+    @maybe = {}
     @terms.each do |term| 
-      @untranslated[term] = Language.where.not(id: term.translations.map { |t| t.language} )
+      @maybe[term] = maybe_translations_for(term)
     end
 
   end
@@ -14,7 +14,7 @@ class TermsController < ApplicationController
   # GET /terms/1 or /terms/1.json
   def show
     @term = Term.find(params[:id])
-    @untranslated_languages = Language.where.not(id: @term.translations.map { |t| t.language} )
+    @maybe_translations = maybe_translations_for(@term)
   end
 
   # GET /terms/new
@@ -65,13 +65,53 @@ class TermsController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
-    def set_term
-      @term = Term.find(params[:id])
+  def set_term
+    @term = Term.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def term_params
+    params.require(:term).permit(:original)
+  end
+
+  def maybe_translations_for(term)
+    maybe_translations = Language.all.map { |l| 
+      translation = Translation.where(term: term.id, language: l.id).take
+      if translation != nil
+        link = edit_translation_path(translation)
+      else
+        link = new_translation_path
+      end
+      MaybeTranslation.new(l, translation, link)
+    }
+    maybe_translations.sort_by { |mt| mt.language.name }
+    maybe_translations
+  end
+
+  class MaybeTranslation 
+    def initialize(language, translation, link)
+      @language = language
+      @translation = translation
+      @link = link
     end
 
-    # Only allow a list of trusted parameters through.
-    def term_params
-      params.require(:term).permit(:original)
+    def language 
+      @language
     end
+
+    def translation 
+      @translation
+    end
+
+    def translated?
+      @translation != nil
+    end
+
+    def link
+      @link
+    end
+
+  end
 end
