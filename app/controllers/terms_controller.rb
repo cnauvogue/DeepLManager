@@ -4,10 +4,17 @@ class TermsController < ApplicationController
   # GET /terms or /terms.json
   def index
     @terms = Term.all
+    @untranslated = {}
+    @terms.each do |term| 
+      @untranslated[term] = Language.where.not(id: term.translations.map { |t| t.language} )
+    end
+
   end
 
   # GET /terms/1 or /terms/1.json
   def show
+    @term = Term.find(params[:id])
+    @untranslated_languages = Language.where.not(id: @term.translations.map { |t| t.language} )
   end
 
   # GET /terms/new

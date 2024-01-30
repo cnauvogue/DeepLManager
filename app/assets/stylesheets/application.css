@@ -50,11 +50,11 @@ p {
   margin: 5px;
 }
 .translations_list {
-    display:flex;
+  display:flex;
 }
 
 .translation_detail {
-    display:inline-block;
+    flex: 1; 
     margin: 5px;
     background-color: #b0dd88;
     padding:10px;
@@ -71,6 +71,17 @@ p {
 
 .translation_detail_term {
   font-weight: bold;
+}
+
+.untranslated_language {
+  flex: 1;
+  margin: 5px;
+  background-color: #e88d88;
+  padding:10px;
+  flex:0 1 10%;
+  height: calc(100% - 10px);
+  border-radius: 20px;
+  font-style: italic;
 }
 
 .person_name {

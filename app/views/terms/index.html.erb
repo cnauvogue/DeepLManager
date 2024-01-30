@@ -7,7 +7,7 @@
     <!-- <li> -->
     <%= link_to term, class: "link" do %>
       <div class="term_detail">
-        <%= render term %>
+        <%= render term, untranslated_languages: @untranslated[term] %>
       </div>
     <% end %>
     <!-- </li> -->

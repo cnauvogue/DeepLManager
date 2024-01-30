@@ -7,6 +7,15 @@
       <%= render "translations/translation", translation: t %>
     <% end %>
   <% end %>
+  <% untranslated_languages.each do |l| %>
+    <%= link_to new_translation_path, language: l, class: "link" do %>
+      <div class="untranslated_language">
+        <div class="untranslated_language_name">
+          <%= l.name %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
 
 <!--</div>-->
