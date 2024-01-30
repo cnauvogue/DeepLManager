@@ -84,6 +84,10 @@ p {
   font-style: italic;
 }
 
+.untranslated_language:hover {
+  background-color: #e07d78;
+}
+
 .person_name {
   background-color: red;
   display:block;
