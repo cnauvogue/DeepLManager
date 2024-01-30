@@ -9,8 +9,8 @@ class TranslationsController < ApplicationController
 
   def new
     @translation = Translation.new
-    if params[:term_id] != nil
-      @term = Term.find(params[:term_id])
+    if params[:term] != nil
+      @term = Term.find(params[:term])
     end
   end
 
@@ -33,6 +33,7 @@ class TranslationsController < ApplicationController
 
   def edit
     @translation = Translation.find(params[:id])
+    @term = @translation.term
   end
 
   def update

@@ -3,7 +3,7 @@
 </div>
 <div class="translations_list">
   <% term.translations.each do |t| %>
-    <%= link_to edit_translation_path(t, :term => term), class: "link" do %>
+    <%= link_to edit_translation_path(t), class: "link" do %>
       <%= render "translations/translation", translation: t %>
     <% end %>
   <% end %>
