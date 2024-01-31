@@ -4,15 +4,13 @@
 <div class="translations_list">
   <% maybe_translations.each do |mt| %>
     <% if mt.translated? %>
-      <%= link_to mt.link, language: mt.language, class: "link" do %>
+      <%= link_to mt.link, language: mt.language, class: "link translation_detail" do %>
         <%= render "translations/translation", translation: mt.translation %>
       <% end %>
     <% else %>
-      <%= link_to new_translation_path(:term => term, :language => mt.language), class: "link" do %>
-        <div class="untranslated_language">
-          <div class="untranslated_language_name">
-            <%= mt.language.name %>
-          </div>
+      <%= link_to new_translation_path(:term => term, :language => mt.language), class: "link untranslated_language" do %>
+        <div class="untranslated_language_name">
+          <%= mt.language.name %>
         </div>
       <% end %>
     <% end %>
