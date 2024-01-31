@@ -79,11 +79,10 @@ body {
 }
 
 .translation_detail {
-    flex: 1; 
     margin: 5px;
     background-color: #b0dd88;
     padding:10px;
-    flex:0 1 10%;
+    width: 100px;
     border-radius: var(--border-radius);
 }
 .translation_detail:hover {
@@ -92,25 +91,36 @@ body {
 
 .translation_detail_language {
   font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .translation_detail_term {
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .untranslated_language {
-  flex: 1;
   margin: 5px;
   background-color: #e88d88;
   padding:10px;
-  flex:0 1 10%;
-  height: calc(100% - 10px);
+  width: 100px;
   border-radius: var(--border-radius);
   font-style: italic;
 }
 
 .untranslated_language:hover {
   background-color: #e07d78;
+}
+
+.untranslated_language_name {
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .person_name {
