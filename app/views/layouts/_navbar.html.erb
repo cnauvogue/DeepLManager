@@ -1,15 +1,13 @@
 <header>
   <div class="navbar">
-    Hey it's the navbar
-    <%= link_to new_language_path, class:"link" do %> 
-      <div class="navbar-item">
-        Add a language
-      </div>
+    <%= link_to root_path, class:"link navbar-logo" do %>
+      noyb translate
+      <% end %>
+    <%= link_to new_language_path, class:"link navbar-item" do %> 
+      Add a language
     <% end %> | 
-    <%= link_to terms_path, class:"link" do %>
-      <div class="navbar-item">
-        Terms
-      </div>
+    <%= link_to terms_path, class:"link navbar-item" do %>
+      Terms
     <% end %>
   </div>
 </header>

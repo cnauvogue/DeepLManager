@@ -51,15 +51,25 @@ body {
   font-size: 30px;
   padding: 10px;
   margin: 0px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
 }
 
+.navbar-logo {
+  display: inline;
+  color: white;
+  padding: 10px 100px 10px 10px;
+}
 .navbar-item {
   display: inline;
   color: white;
 }
 
 .main_content {
-  margin: 0px 10px
+  /* push the top margin to avoid the navbar */
+  margin: 70px 10px 0px 10px;
 }
 .term_original {
   color: white;
@@ -118,7 +128,7 @@ body {
 }
 
 .untranslated_language:hover {
-  background-color: #e07d78;
+  background-color: #d06d58;
 }
 
 .untranslated_language_name {
