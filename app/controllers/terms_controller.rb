@@ -87,7 +87,6 @@ class TermsController < ApplicationController
       MaybeTranslation.new(l, translation, link)
     }
     maybe_translations.sort_by { |mt| mt.language.name }
-    maybe_translations
   end
 
   class MaybeTranslation 
