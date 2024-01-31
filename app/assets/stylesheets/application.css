@@ -22,6 +22,7 @@
   --main-text-color: black;
   --border-radius: 20px;
   --noyb-purple: #9c0a7d;
+  --noyb-purple-highlight: #84086a;
 }
 h1 {
   color: maroon;
@@ -47,8 +48,8 @@ body {
   background-color: var(--noyb-purple);
   color: white;
   font-family: "Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-  font-size: 2em;
-  padding: 20px;
+  font-size: 30px;
+  padding: 10px;
   margin: 0px;
 }
 
@@ -57,17 +58,21 @@ body {
   color: white;
 }
 
+.main_content {
+  margin: 0px 10px
+}
 .term_original {
-  font-weight: bold;
   color: white;
+  font-size: 20px;
+  font-weight: bold;
   background-color: var(--noyb-purple);
   border-radius: calc(var(--border-radius) - 2px) calc(var(--border-radius) - 2px) 0px 0px;
-  padding:10px;
+  padding: 5px 10px 5px 10px;
   text-indent: 10px;
 }
 
 .term_original:hover {
-  background-color: #d02ea0;
+  background-color: var(--noyb-purple-highlight);
 }
 .term_detail {
   border: 2px solid var(--noyb-purple);
@@ -80,13 +85,14 @@ body {
 
 .translation_detail {
     margin: 5px;
-    background-color: #b0dd88;
+    border: 2px solid var(--noyb-purple);
     padding:10px;
     width: 100px;
     border-radius: var(--border-radius);
 }
 .translation_detail:hover {
-  background-color: #a0cd80;
+  background-color: var(--noyb-purple);
+  color: white;
 }
 
 .translation_detail_language {
@@ -109,7 +115,6 @@ body {
   padding:10px;
   width: 100px;
   border-radius: var(--border-radius);
-  font-style: italic;
 }
 
 .untranslated_language:hover {
