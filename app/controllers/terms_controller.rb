@@ -64,9 +64,31 @@ class TermsController < ApplicationController
     end
   end
 
+  def submit
+    @terms = Term.all
+    @langs = Language.all
+    result = {}
+    @langs.each do |lang|
+      lang_result = { "name": "en to #{lang.code}", "entries_format": "tsv" }
+      lang_result["source_lang"] = "en"
+      lang_result["target_lang"] = lang.code
+      tsv = ""
+      @terms.each do |term|
+        translation = term.translations.where(language: lang).take
+        unless translation == nil 
+          tsv = tsv + "#{term.original}\t#{translation.translated_term}\n"
+        end
+      end
+      lang_result["entries"] = tsv
+      result[lang.code] = lang_result
+    end
+    logger.info result
+    @result = JSON.generate(result)
+  end
+
   private
 
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
   def set_term
     @term = Term.find(params[:id])
   end

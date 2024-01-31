@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :terms
+  resources :terms do 
+    collection do 
+      get :submit
+    end
+  end
   resources :languages
   resources :translations
 
