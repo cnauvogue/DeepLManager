@@ -97,40 +97,29 @@ class TermsController < ApplicationController
   end
 
   def maybe_translations_for(term)
-    maybe_translations = Language.all.map { |l| 
+    maybe_translations = Language.all.map do |l|
       translation = Translation.where(term: term.id, language: l.id).take
-      if translation != nil
-        link = edit_translation_path(translation)
-      else
-        link = new_translation_path
-      end
+      link = if translation.nil?
+               new_translation_path
+             else
+               edit_translation_path(translation)
+             end
       MaybeTranslation.new(l, translation, link)
-    }
+    end
     maybe_translations.sort_by { |mt| mt.language.name }
   end
 
-  class MaybeTranslation 
+  class MaybeTranslation
+    attr_reader :language, :translation, :link
+
     def initialize(language, translation, link)
       @language = language
       @translation = translation
       @link = link
     end
 
-    def language 
-      @language
-    end
-
-    def translation 
-      @translation
-    end
-
     def translated?
       @translation != nil
     end
-
-    def link
-      @link
-    end
-
   end
 end
