@@ -1,3 +1,5 @@
+require 'net/http'
+
 class TermsController < ApplicationController
   before_action :set_term, only: %i[ show edit update destroy ]
 
@@ -67,23 +69,19 @@ class TermsController < ApplicationController
   def submit
     @terms = Term.all
     @langs = Language.all
-    result = {}
+    result = []
     @langs.each do |lang|
-      lang_result = { "name": "en to #{lang.code}", "entries_format": "tsv" }
-      lang_result["source_lang"] = "en"
-      lang_result["target_lang"] = lang.code
-      tsv = ""
-      @terms.each do |term|
-        translation = term.translations.where(language: lang).take
-        unless translation == nil 
-          tsv = tsv + "#{term.original}\t#{translation.translated_term}\n"
-        end
-      end
-      lang_result["entries"] = tsv
-      result[lang.code] = lang_result
+      glossary = Glossary.new(@terms, lang)
+      result.append glossary
     end
+
     logger.info result
-    @result = JSON.generate(result)
+
+    begin
+      Api.default.submit(result[0])
+    rescue ApiError => e
+      redirect_to terms_path, notice: e.message
+    end
   end
 
   private

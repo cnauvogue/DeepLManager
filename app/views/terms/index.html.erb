@@ -1,4 +1,6 @@
-<p style="color: green"><%= notice %></p>
+<% if !notice.nil? %>
+  <div class="error_notice"><%= notice %></div>
+<% end %>
 
 <h1>Terms</h1>
 

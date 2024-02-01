@@ -71,6 +71,13 @@ body {
   /* push the top margin to avoid the navbar */
   margin: 70px 10px 0px 10px;
 }
+.error_notice {
+  color: white;
+  background-color: red;
+  font-size:18px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+}
 .term_original {
   color: white;
   font-size: 20px;
