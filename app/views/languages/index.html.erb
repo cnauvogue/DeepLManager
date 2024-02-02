@@ -2,13 +2,14 @@
 
 <h1>Languages</h1>
 
-<div id="languages">
+<div class="language_list">
   <% @languages.each do |language| %>
-    <%= render language %>
-    <p>
-      <%= link_to "Show this language", language %>
-    </p>
+      <%= link_to edit_language_path(language), class:"link language_detail" do %>
+        <%= render language %>
+      <% end %>
   <% end %>
 </div>
-
-<%= link_to "New language", new_language_path %>
+<br>
+<div>
+<%= link_to "New language", new_language_path, class:"link button" %>
+</div>

@@ -6,14 +6,10 @@
 
 <div class="terms_list">
   <% @terms.each do |term| %>
-    <!-- <li> -->
-    <%= link_to term, class: "link" do %>
-      <div class="term_detail">
-        <%= render term, maybe_translations: @maybe[term] %>
-      </div>
-    <% end %>
-    <!-- </li> -->
+    <div class="term_detail">
+      <%= render term, maybe_translations: @maybe[term] %>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New term", new_term_path %>
+<br>
+<%= link_to "New term", new_term_path, class: "link button" %>

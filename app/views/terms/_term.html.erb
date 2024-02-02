@@ -1,6 +1,6 @@
-<div class = "term_original">
+<%= link_to term, class:"term_original link" do %>
   <%= term.original %>
-</div>
+<% end %>
 <div class="translations_list">
   <% maybe_translations.each do |mt| %>
     <% if mt.translated? %>
@@ -16,5 +16,3 @@
     <% end %>
   <% end %>
 </div>
-
-<!--</div>-->
