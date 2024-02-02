@@ -2,7 +2,7 @@ require "test_helper"
 
 class TermsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @term = terms(:one)
+    @term = terms(:GDPR)
   end
 
   test "should get index" do

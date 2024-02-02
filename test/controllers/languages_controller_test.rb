@@ -2,7 +2,7 @@ require "test_helper"
 
 class LanguagesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @language = languages(:one)
+    @language = languages(:french)
   end
 
   test "should get index" do
@@ -20,7 +20,7 @@ class LanguagesControllerTest < ActionDispatch::IntegrationTest
       post languages_url, params: { language: { code: @language.code, name: @language.name } }
     end
 
-    assert_redirected_to language_url(Language.last)
+    assert_redirected_to languages_url
   end
 
   test "should show language" do
@@ -35,7 +35,7 @@ class LanguagesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update language" do
     patch language_url(@language), params: { language: { code: @language.code, name: @language.name } }
-    assert_redirected_to language_url(@language)
+    assert_redirected_to languages_url
   end
 
   test "should destroy language" do

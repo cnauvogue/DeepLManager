@@ -1,9 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  code: MyString
-  name: MyString
+french:
+  code: fr
+  name: French
 
-two:
-  code: MyString
-  name: MyString
+german:
+  code: de
+  name: German
+
+spanish:
+  code: es
+  name: Spanish
+
+italian:
+  code: it
+  name: Italian
+
+romanian:
+  code: ro
+  name: Romanian

@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class LanguagesTest < ApplicationSystemTestCase
   setup do
-    @language = languages(:one)
+    @language = languages(:french)
   end
 
   test "visiting the index" do
@@ -18,8 +18,7 @@ class LanguagesTest < ApplicationSystemTestCase
     fill_in "Name", with: @language.name
     click_on "Create Language"
 
-    assert_text "Language was successfully created"
-    click_on "Back"
+    assert_text "\"#{@language.name}\" was successfully created"
   end
 
   test "should update Language" do
@@ -30,14 +29,16 @@ class LanguagesTest < ApplicationSystemTestCase
     fill_in "Name", with: @language.name
     click_on "Update Language"
 
-    assert_text "Language was successfully updated"
-    click_on "Back"
+    assert_text "\"#{@language.name}\" was successfully updated"
   end
 
   test "should destroy Language" do
     visit language_url(@language)
-    click_on "Destroy this language", match: :first
+    accept_alert do
+      click_on "Delete language", match: :first
+    end
 
-    assert_text "Language was successfully destroyed"
+
+    assert_text "\"#{@language.name}\" was successfully destroyed"
   end
 end

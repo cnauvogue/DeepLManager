@@ -1,7 +1,41 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  original: MyString
+  translated_term: PDGR
+  language: french
+  term: GDPR
 
 two:
-  original: MyString
+  translated_term: PGDR
+  language: german
+  term: GDPR
+
+three:
+  translated_term: GPDR
+  language: spanish
+  term: GDPR
+
+four:
+  translated_term: GPRD
+  language: italian
+  term: GDPR
+
+five:
+  translated_term: GRPD
+  language: romanian
+  term: GDPR
+
+six:
+  translated_term: LASD
+  language: german
+  term: LSAD
+
+seven:
+  translated_term: LDSA
+  language: french
+  term: LSAD
+
+eight:
+  translated_term: LDAS
+  language: romanian
+  term: LSAD

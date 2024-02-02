@@ -2,12 +2,25 @@ require "application_system_test_case"
 
 class TermsTest < ApplicationSystemTestCase
   setup do
-    @term = terms(:one)
+    @term = terms(:GDPR)
   end
 
   test "visiting the index" do
     visit terms_url
     assert_selector "h1", text: "Terms"
+    list = page.all("div.terms_list div.term_detail a.term_original").map(&:text)
+    assert list == [
+      "ADSF",
+      "GDPR",
+      "GFJKH",
+      "HTTD",
+      "LSAD",
+      "QEWR",
+      "SHGD",
+      "WFV",
+      "XVB",
+      "YERUT"
+    ]
   end
 
   test "should create term" do
