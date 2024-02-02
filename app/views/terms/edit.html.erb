@@ -1,3 +1,6 @@
+<% if defined?(status) && !status.nil? %>
+  <p>Status: <%= status %></p>
+<% end %>
 <h1>Editing term</h1>
 
 <%= render "form", term: @term %>

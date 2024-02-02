@@ -42,7 +42,7 @@ class TranslationsController < ApplicationController
   def update
     @translation = Translation.find(params[:id])
     if @translation.update(translation_params)
-      redirect_to @translation
+      redirect_to terms_path
     else
       render :edit, status: :unprocessable_entity
     end

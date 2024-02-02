@@ -6,5 +6,10 @@
   <%= link_to "Edit this language", edit_language_path(@language) %> |
   <%= link_to "Back to languages", languages_path %>
 
-  <%= button_to "Destroy this language", @language, method: :delete %>
+
+  <%= link_to "Delete language", @language, class:"link button", data: {
+      turbo_method: :delete,
+      turbo_confirm: "Delete this language and all its translations?"
+    } %>
+
 </div>

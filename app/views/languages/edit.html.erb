@@ -5,6 +5,9 @@
 <br>
 
 <div>
-  <%= link_to "Show this language", @language %> |
-  <%= link_to "Back to languages", languages_path %>
+  <%= link_to "Delete language", @language, class:"link button", data: {
+      turbo_method: :delete,
+      turbo_confirm: "Delete this language and all its translations?"
+    } %>
+  <%= link_to "Back to languages", languages_path, class:"link button" %>
 </div>
