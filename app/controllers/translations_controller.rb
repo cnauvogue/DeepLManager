@@ -18,8 +18,8 @@ class TranslationsController < ApplicationController
   end
 
   def create
-    @term = Term.find(translation_params[:term_id])
-    @language = Language.find(translation_params[:language_id])
+    @term = Term.find(translation_params[:term])
+    @language = Language.find(translation_params[:language])
 
     @translation = Translation.new(
       translated_term: translation_params[:translated_term],
@@ -28,7 +28,7 @@ class TranslationsController < ApplicationController
     )
 
     if @translation.save
-      redirect_to @translation
+      redirect_to terms_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -57,6 +57,6 @@ class TranslationsController < ApplicationController
   private
 
   def translation_params
-    params.require(:translation).permit(:translated_term, :term_id, :language_id)
+    params.require(:translation).permit(:translated_term, :term, :language)
   end
 end

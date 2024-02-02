@@ -5,13 +5,17 @@
   </div>
 
   <div>
-    <%= form.label :language_id %><br>
-    <%= form.select :language_id, Language.all.collect {|l| [l.name, l.id]}, {include_blank: true, selected: language } %>
+    <%= form.label :language %><br>
+    <%= form.select :language, Language.all.collect {
+      |l| [l.name, l.id]
+    }, {include_blank: true, selected: language.to_i } %>
   </div>
 
   <div>
-    <%= form.label :term_id %><br>
-    <%= form.select :term_id, Term.all.collect {|t| [t.original, t.id]}, {include_blank: true, selected: term } %>
+    <%= form.label :term %><br>
+    <%= form.select :term, Term.all.collect {
+      |t| [t.original, t.id]
+    }, {include_blank: true, selected: term.to_i } %>
   </div>
 
   <div>
