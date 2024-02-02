@@ -5,7 +5,9 @@ class TermsController < ApplicationController
 
   # GET /terms or /terms.json
   def index
-    @terms = Term.all
+    @terms = Term.all.sort_by do |t|
+      t.original.downcase
+    end
     @maybe = {}
     @terms.each do |term| 
       @maybe[term] = maybe_translations_for(term)
