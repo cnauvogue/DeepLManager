@@ -80,7 +80,19 @@ class TermsController < ApplicationController
     logger.info result
 
     begin
-      Api.default.submit(result[0])
+      prev_glossaries = DeepLGlossary.all
+      prev_glossaries.each do |prev_gloss|
+        Api.default.delete prev_gloss
+        prev_gloss.destroy
+      end
+      result.each do |new_gloss|
+        res = Api.default.submit(new_gloss)
+        dl_gloss = DeepLGlossary.new
+        dl_gloss.glossary_id = res['glossary_id']
+        dl_gloss.language_code = new_gloss.glossary_hash['language'].code
+        dl_gloss.name = new_gloss.glossary_hash['name']
+        dl_gloss.save
+      end
     rescue ApiError => e
       redirect_to terms_path, notice: e.message
     end

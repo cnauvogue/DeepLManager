@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_26_124235) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_02_113630) do
+  create_table "deep_l_glossaries", force: :cascade do |t|
+    t.string "glossary_id"
+    t.string "name"
+    t.integer "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_deep_l_glossaries_on_language_id"
+  end
+
   create_table "languages", force: :cascade do |t|
     t.string "code"
     t.string "name"

@@ -1,0 +1,2 @@
+class DeepLGlossary < ApplicationRecord
+end
